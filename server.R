@@ -2,7 +2,7 @@ library("dplyr")
 library("plotly")
 library("tidyverse")
 
-df <- read.csv("~/Desktop/info201/a4-climate-change-LinyiXia01/owid-co2-data.csv",
+df <- read.csv("owid-co2-data.csv",
                  stringsAsFactors = FALSE)
 
 co2_df <- df %>% 
