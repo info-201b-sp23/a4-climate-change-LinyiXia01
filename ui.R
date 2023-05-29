@@ -42,22 +42,14 @@ ui <- navbarPage(
       This omission would impact the analysis of CO2 emission trends over time.
       And it may lead to the marginalization of these less developed countries in terms of climate change issues."),
     h2("Summary"),
-    p("The overall co2 emissions in high income countries show a sharp upward trend over time, with the lowest co2 emissions year being ",
-      textOutput("min_high_co2_year", inline = T),
-      " and the highest co2 emissions year being ", 
-      textOutput("max_high_co2_year", inline = T), 
-      " with ",
-      textOutput("max_high_co2_year_co2", inline = T), 
-      " millions tons. but fortunately, after ",
-      textOutput("max_high_co2_year", inline = T), 
-      " co2 emissions have declined. 
-      The overall co2 emissions in low-income countries are small and show a more moderate trend, 
-      with the highest emission year being ",
-      textOutput("max_low_co2_year", inline = T),
+    p("The overall co2 emissions in high income countries show a sharp upward trend over time, 
+      with the lowest co2 emissions year being 1750 and the highest co2 emissions year being 2007 with 14503.344 millions tons. But fortunately, 
+      after 2007, co2 emissions have declined. The overall co2 emissions in low-income countries
+      are little and show a more moderate trend, with the highest emission amount 278.471 mt in 1989."),
     h2("Insights"),
     p("In general, CO2 emissions in countries all over the world are showing an increasing trend over time,
       indicating people's production activities are having a huge impact on the climate. We should take action right now
-      to release this negative impact."))
+      to release this negative impact.")
   ),
   tabPanel(
     "Graph",

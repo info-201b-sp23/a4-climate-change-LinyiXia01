@@ -4,10 +4,10 @@ username:
 account: linyix2
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 9206235
-bundleId: 7276311
+appId: 9206723
+bundleId: 7276841
 url: https://linyix2.shinyapps.io/a4-climate-change-LinyiXia01/
-when: 1685344220.70928
-lastSyncTime: 1685344220.7093
+when: 1685356628.36847
+lastSyncTime: 1685356628.36849
 asMultiple: FALSE
 asStatic: FALSE
