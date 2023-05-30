@@ -1,7 +1,7 @@
 library("dplyr")
 library("plotly")
 library("tidyverse")
-library("ggplot2")
+
 
 df <- read.csv("owid-co2-data.csv",
                stringsAsFactors = F)
@@ -25,8 +25,48 @@ low_income <- co2_df %>%
   arrange(-co2)
 
 server <- function(input, output) {
+  
+  output$max_high_co2_year <- renderText({
+    max_high_co2_year <- high_income %>%
+      filter(co2 == max(co2)) %>%
+      pull(year)
+    
+    return(max_high_co2_year)
+  })
 
-  output$co2_plot <- renderPlotly({
+  output$max_low_co2_year <- renderText({
+    max_low_co2_year <- low_income %>%
+      filter(co2 == max(co2)) %>%
+      pull(year)
+
+    return(max_low_co2_year)
+  })
+
+  output$max_high_co2 <- renderText({
+    max_high_co2 <- high_income %>%
+      filter(co2 == max(co2)) %>%
+      pull(co2)
+    
+    return(max_high_co2)
+  })  
+
+  output$max_low_co2 <- renderText({
+    max_low_co2 <- low_income %>%
+      filter(co2 == max(co2)) %>%
+      pull(co2)
+    
+    return(max_low_co2)
+  })  
+  
+  output$max_low_co2_year <- renderText({
+    max_low_co2_year <- low_income %>%
+      filter(co2 == max(co2)) %>%
+      pull(year)
+    
+    return(max_low_co2_year)
+  })  
+  
+   output$co2_plot <- renderPlotly({
     #filter the dataset to user selected countries
     validate(
       need(input$input_country, "Select a Country")
@@ -75,27 +115,5 @@ server <- function(input, output) {
   
 }
 
-max_high_co2_year <- high_income %>%
-  filter(co2 == max(co2)) %>%
-  pull(year)
-
-
-max_high_co2 <- high_income %>%
-  filter(co2 == max(co2)) %>%
-  pull(co2)
-
-
-min_high_co2_year <- high_income %>%
-  filter(co2 == min(co2, na.rm = T)) %>%
-  pull(year)
-
-
-max_low_co2_year <- low_income %>%
-  filter(co2 == max(co2)) %>%
-  pull(year)
-
-max_low_co2 <- low_income %>%
-  filter(co2 == max(co2)) %>%
-  pull(co2)
 
 

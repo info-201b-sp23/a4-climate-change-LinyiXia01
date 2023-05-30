@@ -42,10 +42,20 @@ ui <- navbarPage(
       This omission would impact the analysis of CO2 emission trends over time.
       And it may lead to the marginalization of these less developed countries in terms of climate change issues."),
     h2("Summary"),
-    p("The overall co2 emissions in high income countries show a sharp upward trend over time, 
-      with the lowest co2 emissions year being 1750 and the highest co2 emissions year being 2007 with 14503.344 millions tons. But fortunately, 
-      after 2007, co2 emissions have declined. The overall co2 emissions in low-income countries
-      are little and show a more moderate trend, with the highest emission amount 278.471 mt in 1989."),
+    p("The overall CO2 emissions in high income countries show a sharp upward trend over time,
+      with the lowest CO2 emissions year being",
+      strong("1750"), 
+      "and the highest CO2 emissions year being ",
+      strong(textOutput("max_high_co2_year", inline = TRUE)),
+      "with ",
+      strong(textOutput("max_high_co2", inline = TRUE)),
+      " millions tons. But fortunately, after 2007, CO2 emissions have declined.
+      The overall CO2 emissions in low-income countries are little and show a more moderate trend,
+      with the highest emission amount ",
+      strong(textOutput("max_low_co2", inline = TRUE)),
+      " million tons in ",
+      strong(textOutput("max_low_co2_year", inline = TRUE)),
+      "."),
     h2("Insights"),
     p("In general, CO2 emissions in countries all over the world are showing an increasing trend over time,
       indicating people's production activities are having a huge impact on the climate. We should take action right now
@@ -81,7 +91,7 @@ ui <- navbarPage(
       Although there has been a decline since 2007(which I think might relate to the signing of the Paris Agreement),
       the quantity of CO2 emissions remains substantial. For middle and low-income countries,
       their CO2 emissions are significantly lower compared to high-income countries but still exhibit an overall upward trend.
-      This indicates that human activities have a great impact on the climate and we must take actions."),
+      This indicates that human activities have a great impact on the climate and we must take actions.", align ="middle"),
     sidebarLayout(
       sidebarPanel(
         selectInput(
@@ -107,7 +117,8 @@ ui <- navbarPage(
       their weighting differs from countries and changes over time. For example,
       in China, coal is alwasys the most largest source of CO2 emissions over time.
       While in the North America, before 1950s, coal was the main source. And after that,
-      oil has become the most prevalent source of CO2 emissions.") 
+      oil has become the most prevalent source of CO2 emissions.", align = "middle") 
   )
 )
+
 
