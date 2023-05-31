@@ -79,19 +79,20 @@ ui <- navbarPage(
                     max = 2021,
                     value = c(1750, 2021))
       ),
-      mainPanel(plotlyOutput("co2_plot"))
+      mainPanel(plotlyOutput("co2_plot"),
+                p("This line charts depicts the CO2 emissions of selected countries over time.", align = "middle"),
+                h4("Purpose", align = "middle"),
+                p("I would like to know the trend of the CO2 emissions over time of all the countries and 
+                  emission differences between different countries and regions.", align = "middle"),
+                h4("Insight", align = "middle"),
+                p("From the plot, we can find that almost all the countries have an increasing trend of CO2 emissions.
+                  For high-income countries, CO2 emissions consistently showed a surge from 1820 to 2007.
+                  Although there has been a decline since 2007(which I think might relate to the signing of the Paris Agreement),
+                  the quantity of CO2 emissions remains substantial. For middle and low-income countries,
+                  their CO2 emissions are significantly lower compared to high-income countries but still exhibit an overall upward trend.
+                  This indicates that human activities have a great impact on the climate and we must take actions.", align ="middle"))
     ),
-    p("This line charts depicts the CO2 emissions of selected countries over time.", align = "middle"),
-    h4("Purpose", align = "middle"),
-    p("I would like to know the trend of the CO2 emissions over time of all the countries and 
-      emission differences between different countries and regions.", align = "middle"),
-    h4("Insight", align = "middle"),
-    p("From the plot, we can find that almost all the countries have an increasing trend of CO2 emissions.
-      For high-income countries, CO2 emissions consistently showed a surge from 1820 to 2007.
-      Although there has been a decline since 2007(which I think might relate to the signing of the Paris Agreement),
-      the quantity of CO2 emissions remains substantial. For middle and low-income countries,
-      their CO2 emissions are significantly lower compared to high-income countries but still exhibit an overall upward trend.
-      This indicates that human activities have a great impact on the climate and we must take actions.", align ="middle"),
+    
     sidebarLayout(
       sidebarPanel(
         selectInput(
@@ -107,17 +108,18 @@ ui <- navbarPage(
                     max = 2021,
                     value = 1980)
       ),
-      mainPanel(plotlyOutput("energy_plot"))
-    ),
-    p("This bar chart depicts emissions of C02 from different energy sources in different countries.", align = "middle"),
-    h4("Purpose", align = "middle"),
-    p("I would like to know what energy is the largest source of CO2 emissions in different countries over time.", align = "middle"),
-    h4("Insight", align = "middle"),
-    p("From the plot, we can find that coal, gas and oil are the most prevalent sources of CO2 emissions but
-      their weighting differs from countries and changes over time. For example,
-      in China, coal is alwasys the most largest source of CO2 emissions over time.
-      While in the North America, before 1950s, coal was the main source. And after that,
-      oil has become the most prevalent source of CO2 emissions.", align = "middle") 
+      mainPanel(plotlyOutput("energy_plot"),
+                p("This bar chart depicts emissions of C02 from different energy sources in different countries.", align = "middle"),
+                h4("Purpose", align = "middle"),
+                p("I would like to know what energy is the largest source of CO2 emissions in different countries over time.", align = "middle"),
+                h4("Insight", align = "middle"),
+                p("From the plot, we can find that coal, gas and oil are the most prevalent sources of CO2 emissions but
+                  their weighting differs from countries and changes over time. For example,
+                  in China, coal is alwasys the most largest source of CO2 emissions over time.
+                  While in the North America, before 1950s, coal was the main source. And after that,
+                  oil has become the most prevalent source of CO2 emissions.", align = "middle") )
+    )
+    
   )
 )
 
